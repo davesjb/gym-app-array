@@ -1,0 +1,146 @@
+// Row
+.section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.row {
+  width: 100%;
+  min-height: 70px;
+  float: left;
+  position: relative;
+  @media screen and (min-width: 670px) {
+    &.box {
+      border: #0c0b0b solid 1px;
+      padding: 30px 0 0;
+    }
+  }
+  > div {
+    margin: 4px 0;
+    float: left;
+  }
+  .icon-programme {
+    position: relative;
+    svg {
+      position: absolute;
+      color: $in-print;
+      width: 30px;
+      height: 30px;
+      left: -3px;
+    }
+  }
+  .icon-saved {
+    position: relative;
+    svg {
+      position: absolute;
+      color: $in-print;
+      width: 23px;
+      height: 23px;
+      left: 1px;
+    }
+  }
+  .slot-number {
+    width: 30px;
+    min-height: 70px;
+    @extend %rowpadding;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &.slot-title {
+      display: none;
+      @media screen and (min-width: 390px) {
+        display: flex;
+      }
+    }
+  }
+  .slot-text,
+  .slot-text-info {
+    width: auto;
+    min-height: 70px;
+    position: relative;
+    @extend %rowpadding;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: 470px) {
+      width: 100%;
+      max-width: 250px;
+    }
+    span {
+      word-wrap: normal;
+    }
+  }
+  .slot-text {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .number-boxes {
+    width: 100%;
+    max-width: 280px;
+    float: left;
+    margin-left: 6px;
+    @media screen and (min-width: 390px) {
+      margin-left: 30px;
+    }
+  }
+  .reps {
+    @extend %border-button;
+    span {
+      width: 100%;
+      float: left;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .reps-pushup {
+    &:hover {
+      cursor: auto;
+    }
+  }
+
+  .rest-box {
+    font-size: $big-no;
+    text-align: center;
+    @extend %border-button;
+    span {
+      font-size: $small-no;
+      width: 100%;
+      float: left;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .count-down {
+    @extend %border-button;
+    &.done {
+      color: $green;
+    }
+  }
+  .target {
+    @extend %border-button;
+    &.done {
+      color: $green;
+    }
+  }
+}
+
+.big-no {
+  font-size: $big-no;
+  text-align: center;
+  span {
+    font-size: $small-no;
+    width: 100%;
+    float: left;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.small-no {
+  font-size: $small-no;
+}

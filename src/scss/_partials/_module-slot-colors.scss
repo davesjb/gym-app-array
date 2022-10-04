@@ -1,0 +1,127 @@
+.slot-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 30px;
+  position: relative;
+
+  @media screen and (min-width: 340px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media screen and (max-width: 704px) {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 386px;
+  }
+  .show-pushups {
+    color: $red;
+  }
+  .show-back {
+    color: $blue;
+  }
+  .show-legs {
+    color: $yellow;
+  }
+  .show-arms {
+    color: $orange;
+  }
+  .show-core {
+    color: $pink;
+  }
+  .row:nth-child(3) .reps {
+    color: $red;
+  }
+  .row:nth-child(4) .reps {
+    color: $blue;
+  }
+  .row:nth-child(5) .reps {
+    color: $yellow;
+  }
+  .row:nth-child(6) .reps {
+    color: $pink;
+  }
+  &.upper {
+    .row:nth-child(3) .reps {
+      color: $red;
+    }
+    .row:nth-child(4) .reps {
+      color: $blue;
+    }
+    .row:nth-child(5) .reps {
+      color: $blue;
+    }
+    .row:nth-child(6) .reps {
+      color: $orange;
+    }
+    .show-pushups,
+    .show-back,
+    .show-arms {
+      opacity: 1;
+    }
+  }
+  &.lower {
+    .row:nth-child(3) .reps {
+      color: $yellow;
+    }
+    .row:nth-child(4) .reps {
+      color: $yellow;
+    }
+    .row:nth-child(5) .reps {
+      color: $pink;
+    }
+    .row:nth-child(6) .reps {
+      color: $pink;
+    }
+    .show-core,
+    .show-legs {
+      opacity: 1;
+    }
+    .show-pushups,
+    .show-back {
+      opacity: 0;
+    }
+  }
+  &.fullbody {
+    .row:nth-child(3) .reps {
+      color: $red;
+    }
+    .row:nth-child(4) .reps {
+      color: $blue;
+    }
+    .row:nth-child(5) .reps {
+      color: $yellow;
+    }
+    .row:nth-child(6) .reps {
+      color: $pink;
+    }
+    .show-pushups,
+    .show-core,
+    .show-back,
+    .show-legs {
+      opacity: 1;
+    }
+  }
+  &.fullbodyhiit {
+    .row:nth-child(3) .reps {
+      color: $pink;
+    }
+    .row:nth-child(4) .reps {
+      color: $blue;
+    }
+    .row:nth-child(5) .reps {
+      color: $yellow;
+    }
+    .row:nth-child(6) .reps {
+      color: $pink;
+    }
+    .show-core,
+    .show-back,
+    .show-legs {
+      opacity: 1;
+    }
+    .show-pushups {
+      opacity: 0;
+    }
+  }
+}

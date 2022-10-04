@@ -1,0 +1,72 @@
+body {
+  background-color: $bg-grey;
+  font-family: $body-font;
+  color: $off-white;
+  h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  a {
+    color: $off-white;
+  }
+  #programme {
+    color: $dark-grey;
+    h1,
+    h2,
+    h3,
+    p,
+    a {
+      color: $dark-grey;
+    }
+  }
+}
+
+.content {
+  ul {
+    li {
+      font-family: $body-font;
+      color: $off-white;
+      font-size: 16px;
+      line-height: 1.6;
+      &::after {
+        content: " ";
+        display: none;
+      }
+    }
+  }
+}
+
+.column {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+body {
+  top: 0;
+}
+
+.cap::first-letter {
+  text-transform: capitalize;
+}
+
+.warning-text,
+.red-text {
+  color: $red;
+}
+
+.amber-text {
+  color: $amber;
+}
+
+.go-text {
+  color: $green;
+}
+
+button {
+  font-family: $body-font;
+}

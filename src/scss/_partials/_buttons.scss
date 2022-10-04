@@ -1,0 +1,77 @@
+.app-button {
+  color: $off-white;
+  background-color: $dark-grey;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend %border-button;
+  opacity: 1;
+  transition: 0.3s ease-out;
+  padding: 25px 0;
+  position: relative;
+  &::after {
+    content: "";
+    width: 10%;
+    height: 1px;
+    background-color: $off-white;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s ease-out;
+  }
+  span {
+    width: 100%;
+    float: left;
+  }
+  &.reset-active {
+    color: $red;
+    &::after {
+      background-color: $red;
+    }
+  }
+  &.options-active {
+    color: $amber;
+    &::after {
+      background-color: $orange;
+    }
+  }
+  &.go-active {
+    color: $off-white;
+    border: 1px solid $red12;
+    &::after {
+      background-color: $off-white;
+    }
+  }
+  &.wide-anim {
+    &::after {
+      width: 40%;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    &::after {
+      width: 40%;
+    }
+
+    &.reset {
+      color: $red;
+      &::after {
+        background-color: $red;
+      }
+    }
+    &.options {
+      color: $amber;
+      &::after {
+        background-color: $amber;
+      }
+    }
+    &.go {
+      color: $green;
+      &::after {
+        background-color: $green;
+      }
+    }
+  }
+}

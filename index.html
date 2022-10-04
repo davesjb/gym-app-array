@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Circuit Generator</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container-outer aos-all" id="transcroller-body">
+      <div data-burger id="burger"><span></span></div>
+      <nav data-nav-side class="nav-side">
+        <ul>
+          <li>
+            <a href="#0" data-go-side class="go" title="Go!">
+              <svg
+                width="144pt"
+                height="158pt"
+                viewBox="0 0 144 158"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="#f2f2f2ff"></g>
+                <g id="#000000ff">
+                  <path
+                    fill="#FFFFFF"
+                    opacity="1.00"
+                    d=" M 36.40 15.43 C 39.56 14.73 42.68 16.05 45.17 17.89 C 69.36 34.02 93.56 50.11 117.76 66.22 C 120.29 67.98 123.32 69.43 124.72 72.35 C 127.09 76.72 125.59 82.74 121.27 85.30 C 95.67 102.37 70.04 119.39 44.44 136.46 C 41.75 138.42 38.18 139.25 34.99 138.11 C 30.77 136.81 27.85 132.49 28.12 128.09 C 28.11 94.03 28.12 59.96 28.12 25.90 C 27.74 20.95 31.53 16.23 36.40 15.43 Z"
+                  />
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#0" data-set-side class="go opacity" title="Set +">
+              <svg
+                width="182pt"
+                height="158pt"
+                viewBox="0 0 182 158"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="#f2f2f2ff"></g>
+                <g id="#000000ff">
+                  <path
+                    fill="#FFFFFF"
+                    opacity="1.00"
+                    d=" M 77.17 17.31 C 83.47 15.14 90.55 15.14 96.85 17.32 C 100.12 18.41 103.61 21.03 103.33 24.88 C 103.38 37.47 103.33 50.06 103.35 62.65 C 115.93 62.67 128.51 62.62 141.09 62.67 C 144.95 62.37 147.59 65.87 148.68 69.16 C 150.85 75.43 150.85 82.49 148.71 88.77 C 147.62 92.07 145.00 95.61 141.13 95.33 C 128.53 95.38 115.94 95.33 103.35 95.35 C 103.33 107.93 103.38 120.52 103.33 133.10 C 103.62 136.97 100.10 139.61 96.80 140.70 C 90.52 142.85 83.46 142.85 77.18 140.70 C 73.89 139.60 70.37 136.96 70.67 133.09 C 70.62 120.51 70.67 107.93 70.65 95.35 C 58.08 95.33 45.51 95.38 32.94 95.33 C 29.03 95.65 26.38 92.09 25.28 88.76 C 23.15 82.49 23.15 75.45 25.30 69.19 C 26.40 65.91 29.00 62.39 32.85 62.67 C 45.45 62.62 58.05 62.67 70.65 62.66 C 70.68 50.07 70.62 37.49 70.67 24.91 C 70.37 21.04 73.88 18.40 77.17 17.31 Z"
+                  />
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#0" data-skip-side class="go opacity" title="Skip">
+              <svg
+                width="160pt"
+                height="176pt"
+                viewBox="0 0 160 176"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="#f2f2f2ff"></g>
+                <g id="#000000ff">
+                  <path
+                    fill="#FFFFFF"
+                    opacity="1.00"
+                    d=" M 22.13 37.02 C 22.35 29.97 31.00 25.55 36.97 29.12 C 62.68 43.91 88.26 58.94 113.98 73.73 C 114.11 61.47 113.96 49.20 114.04 36.94 C 113.92 31.53 119.55 27.30 124.73 28.31 C 128.83 28.93 132.10 32.79 131.90 36.95 C 131.92 74.32 131.90 111.68 131.91 149.05 C 132.10 152.35 130.37 155.75 127.35 157.22 C 121.96 160.02 114.27 156.35 114.07 150.00 C 113.92 137.23 114.13 124.46 113.99 111.69 C 88.08 126.48 62.41 141.72 36.50 156.51 C 30.46 159.94 22.07 154.90 22.12 147.99 C 22.08 111.00 22.04 74.01 22.13 37.02 Z"
+                  />
+                </g>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="nav">
+        <div class="row">
+          <form id="programme">
+            <ol>
+              <li>
+                <p>Workout Type</p>
+                <input
+                  type="radio"
+                  id="fullbody"
+                  name="musclegroup"
+                  value="fullbody"
+                  checked
+                />
+                <label for="fullbody">Full body</label><br />
+                <input
+                  type="radio"
+                  id="upper"
+                  name="musclegroup"
+                  value="upper"
+                />
+                <label for="upper">Upper Body</label><br />
+                <input
+                  type="radio"
+                  id="lower"
+                  name="musclegroup"
+                  value="lower"
+                />
+                <label for="lower">Legs & Core</label><br />
+
+                <input
+                  type="radio"
+                  id="fullbodyhiit"
+                  name="musclegroup"
+                  value="fullbodyhiit"
+                />
+                <label for="fullbodyhiit">High Intensity</label><br />
+              </li>
+              <li>
+                <p>
+                  Training System <span class="nav-hide">(Reps, Sets)</span>
+                </p>
+                <input
+                  type="radio"
+                  id="endurance"
+                  name="trainingsystem"
+                  value="endurance"
+                />
+                <label for="endurance"
+                  >Endurance
+                  <span class="nav-hide"
+                    >(14&nbsp;-&nbsp;20,&nbsp;3)</span
+                  ></label
+                ><br />
+                <input
+                  type="radio"
+                  id="hypertrophy"
+                  name="trainingsystem"
+                  value="hypertrophy"
+                  checked
+                />
+                <label for="hypertrophy"
+                  >Hypertrophy
+                  <span class="nav-hide"
+                    >(10&nbsp;-&nbsp;12,&nbsp;3)</span
+                  ></label
+                ><br />
+                <input
+                  type="radio"
+                  id="power"
+                  name="trainingsystem"
+                  value="power"
+                />
+                <label for="power"
+                  >Power
+                  <span class="nav-hide">(4&nbsp;-&nbsp;8,&nbsp;4)</span></label
+                ><br />
+                <input
+                  type="radio"
+                  id="strength"
+                  name="trainingsystem"
+                  value="strength"
+                />
+                <label for="strength"
+                  >Strength
+                  <span class="nav-hide">(2&nbsp;-&nbsp;6,&nbsp;5)</span></label
+                ><br />
+                <input
+                  type="radio"
+                  id="time"
+                  name="trainingsystem"
+                  value="time"
+                />
+                <label for="time"
+                  >Interval Training
+                  <span class="nav-hide">(*Time,&nbsp;3)</span></label
+                ><br />
+              </li>
+              <li>
+                <p>Level (*Time, Rest, Rounds)</p>
+                <input
+                  type="radio"
+                  id="beginner"
+                  name="hiittime"
+                  value="beginner"
+                />
+                <label for="beginner">Beginner</label><br />
+                <input
+                  type="radio"
+                  id="intermediate"
+                  name="hiittime"
+                  value="intermediate"
+                  checked
+                />
+                <label for="intermediate">Intermediate</label><br />
+                <input
+                  type="radio"
+                  id="advanced"
+                  name="hiittime"
+                  value="advanced"
+                />
+                <label for="advanced">Advanced</label><br />
+              </li>
+            </ol>
+            <button class="app-button" type="submit">Go!</button>
+          </form>
+        </div>
+      </nav>
+      <header>
+        <div id="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            id="Layer_1"
+            x="0"
+            y="0"
+            viewBox="0 0 329.3 332.7"
+            enable-background="new 0 0 329.3 332.7"
+            xml:space="preserve"
+          >
+            <path
+              fill="none"
+              d="M62.3 16.6L16.6 63.2v70.4h17.1v182.9h278.5v-82.1l-18.8-17.1h-50.8l69.6-69.6V61.9l-46.1-45.3H62.3zM98.1 301.2H49.9V116.7H33.3V71.9l38-38.8h59.3l-30.3 30.1v84.1h82.7l-84.7 85.4L98.1 301.2zM296 137.2l-96.5 96.9h84.8l11.6 11.2 0.1 55.8H111.6v-61.9l17.1-17.2L230 121V99.3h-47l0.4 34.1h-71.8V71.5l17.1-16.7 22.2-21.7h106.7L296 71.5V137.2z"
+            />
+            <polygon
+              id="_x31_"
+              fill="#FFFFFF"
+              points="100.3 147.3 100.3 63.2 130.6 33.1 71.3 33.1 33.3 71.9 33.3 116.7 49.9 116.7 49.9 301.2 98.1 301.2 98.3 232.7 183.1 147.3 "
+            />
+            <path
+              id="_x32_"
+              fill="#FFFFFF"
+              d="M150.9 33.1l-22.2 21.7 -17.1 16.7v61.9h71.8l-0.4-34.1h47V121L128.7 222.1l-17.1 17.2v61.9H296l-0.1-55.8 -11.6-11.2h-84.8l96.5-96.9V71.5l-38.4-38.4H150.9zM158.1 265.3l-5.3 5.2 5.3 5.1v16.8h-11.9v-11l-5.7-6v17h-11.9v-47.1h22.7l6.7 6.6V265.3zM254 277.8h11.7v3h5.9v-5.9h-10.9l-6.7-6.6v-16.2l6.7-6.6h15.8l6.8 6.6v8.1h-11.8v-2.9h-5.8v5.8h10.9l6.7 6.7v16.1l-6.7 6.6h-15.9l-6.7-6.6V277.8zM214.2 245.5H237l6.7 6.7v16l-7.2 6.6H226v17.7h-11.8V245.5zM200 245.5v14.7h-14.7v2.9h11.8v11.8h-11.8v2.9H200v14.8h-26.5v-47.1H200z"
+            />
+            <rect
+              id="dot_1_"
+              x="140.5"
+              y="257.2"
+              fill="#FFFFFF"
+              width="5.7"
+              height="5.9"
+            />
+            <rect
+              id="dot"
+              x="226"
+              y="257.3"
+              fill="#FFFFFF"
+              width="5.8"
+              height="5.8"
+            />
+            <path
+              id="Outline"
+              fill="#E7404A"
+              d="M329.3 54.6L274.3 0H54.2L0 55.1v95.6h16.2v182h313.1V227.2l-29.7-26.6h-16.8l46.5-46.1V54.6zM312.3 147.7l-69.6 69.6h50.8l18.8 17.1v82.1H33.7V133.6H16.6V63.2l45.7-46.5h203.8l46.1 45.3V147.7z"
+            />
+          </svg>
+        </div>
+      </header>
+      <section class="section">
+        <div class="container">
+          <div data-slot-container class="content slot-container">
+            <div class="column">
+              <div class="row">
+                <div class="slot-number slot-title"></div>
+                <div class="slot-text-info">
+                  <h3>Exercise Circuit Generator</h3>
+                </div>
+
+                <div class="number-boxes">
+                  <button data-skip class="app-button skip go opacity">
+                    Skip
+                  </button>
+                  <button data-set-done class="app-button set-done go opacity">
+                    Set +
+                  </button>
+                  <button data-go class="app-button go-active opacity">
+                    Go!
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div data-select-reps class="slot-number icon-programme">
+                  <svg
+                    width="130pt"
+                    height="88pt"
+                    viewBox="0 0 130 88"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="#f2f2f2ff"></g>
+                    <g id="#000000ff">
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 29.50 23.66 C 33.39 21.08 39.95 23.93 39.25 29.01 C 38.90 38.98 39.45 48.97 39.12 58.93 C 38.06 64.80 28.15 64.86 26.93 59.05 C 26.57 49.03 26.87 38.97 26.78 28.94 C 26.60 26.82 27.59 24.67 29.50 23.66 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 43.30 23.37 C 46.84 21.54 52.41 23.62 52.46 28.01 C 52.50 38.33 52.68 48.68 52.37 59.00 C 51.22 64.90 41.11 64.80 40.16 58.83 C 39.85 48.57 39.71 38.28 40.09 28.02 C 40.04 25.97 41.49 24.18 43.30 23.37 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 81.18 23.19 C 84.69 21.67 89.87 23.83 89.92 28.02 C 90.28 38.26 90.25 48.54 89.84 58.77 C 88.97 64.80 78.76 64.92 77.62 58.98 C 77.28 49.01 77.57 39.02 77.48 29.04 C 77.18 26.49 78.74 24.00 81.18 23.19 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 94.22 23.28 C 97.74 21.61 103.11 23.72 103.16 28.00 C 103.27 37.99 103.25 48.00 103.17 58.00 C 103.19 63.27 95.68 65.10 92.34 61.62 C 90.42 59.98 90.75 57.27 90.74 55.01 C 90.97 46.01 90.85 37.00 90.79 28.00 C 90.72 25.86 92.33 24.05 94.22 23.28 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 20.70 32.06 C 22.34 32.00 23.97 31.96 25.61 31.93 C 25.61 39.26 25.61 46.59 25.61 53.92 C 23.99 53.91 22.37 53.89 20.74 53.86 C 20.47 51.90 20.40 49.92 20.33 47.94 C 19.47 47.94 17.76 47.94 16.90 47.93 C 16.90 44.51 16.90 41.09 16.90 37.67 C 18.04 37.67 19.17 37.66 20.31 37.66 C 20.41 35.79 20.51 33.92 20.70 32.06 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 104.38 31.93 C 106.03 31.96 107.67 32.00 109.32 32.06 C 109.50 33.92 109.59 35.80 109.68 37.67 C 110.82 37.67 111.96 37.67 113.10 37.67 C 113.10 41.10 113.10 44.52 113.10 47.94 C 112.24 47.94 110.53 47.95 109.67 47.95 C 109.60 49.92 109.51 51.89 109.25 53.85 C 107.63 53.89 106.01 53.92 104.39 53.94 C 104.38 46.60 104.38 39.26 104.38 31.93 Z"
+                      />
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 53.43 37.80 C 61.15 37.80 68.86 37.80 76.57 37.80 C 76.57 41.27 76.57 44.73 76.57 48.20 C 68.86 48.20 61.14 48.20 53.43 48.20 C 53.43 44.73 53.43 41.27 53.43 37.80 Z"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div data-programme class="slot-text-info">
+                  <span data-loaded>Full Body</span>
+                </div>
+                <div class="number-boxes">
+                  <button
+                    data-toggle-reps
+                    class="app-button animate-onload options expand"
+                  >
+                    View
+                  </button>
+
+                  <div data-set-counter class="rest-box">
+                    0 <span>Sets</span>
+                  </div>
+                  <div data-total-text class="count-down big-no">
+                    0 <span>Rounds</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row exercise-list">
+                <div class="slot-number"><span>1</span></div>
+                <div data-slot1-text class="slot-text">
+                  <span></span>
+                </div>
+                <div class="number-boxes list-view">
+                  <div data-slot1-reps class="reps reps-pushup big-no">
+                    12 <span>Reps</span>
+                  </div>
+                  <div class="hide-pushups">
+                    <div data-pushups-target class="target big-no show-pushups">
+                      0 <span>Pushups</span>
+                    </div>
+                    <div
+                      data-pushups-text
+                      class="count-down big-no show-pushups"
+                    >
+                      100 <span>Remain</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row exercise-list">
+                <div class="slot-number"><span>2</span></div>
+                <div data-slot2-text class="slot-text">
+                  <span></span>
+                </div>
+                <div class="number-boxes list-view">
+                  <div data-slot2-reps class="reps big-no">
+                    12 <span>Reps</span>
+                  </div>
+                  <div class="hide-goals">
+                    <div data-back-text class="count-down big-no show-back">
+                      0 <span>Upper</span>
+                    </div>
+                    <div data-back-target class="target big-no show-back">
+                      5 <span>Rounds</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row exercise-list">
+                <div class="slot-number"><span>3</span></div>
+                <div data-slot3-text class="slot-text">
+                  <span></span>
+                </div>
+                <div class="number-boxes list-view">
+                  <div data-slot3-reps class="reps big-no">
+                    12 <span>Reps</span>
+                  </div>
+                  <div class="hide-goals">
+                    <div data-legs-text class="count-down big-no show-legs">
+                      0 <span>Lower</span>
+                    </div>
+                    <div data-legs-target class="target big-no show-legs">
+                      5 <span>Rounds</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row exercise-list">
+                <div class="slot-number"><span>4</span></div>
+                <div data-slot4-text class="slot-text">
+                  <span></span>
+                </div>
+                <div class="number-boxes list-view">
+                  <div data-slot4-reps class="reps big-no">
+                    12 <span>Reps</span>
+                  </div>
+                  <div class="hide-goals">
+                    <div class="open-core">
+                      <div data-core-text class="count-down big-no show-core">
+                        0 <span>Core</span>
+                      </div>
+                      <div data-core-target class="target big-no show-core">
+                        5 <span>Rounds</span>
+                      </div>
+                    </div>
+                    <div class="open-arms">
+                      <div data-arms-text class="count-down big-no show-arms">
+                        0 <span>Arms</span>
+                      </div>
+                      <div data-arms-target class="target big-no show-arms">
+                        5 <span>Rounds</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="slot-number"><span>5</span></div>
+                <div data-sets class="slot-text">
+                  <span>Rest Time (3 Sets)</span>
+                </div>
+                <div class="number-boxes">
+                  <div data-rest class="rest-box">1 <span>Min</span></div>
+                  <button data-options class="app-button options">
+                    Options
+                  </button>
+                  <button data-reset class="app-button reset opacity">
+                    Reset
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="slot-number icon-saved">
+                  <svg
+                    width="138pt"
+                    height="150pt"
+                    viewBox="0 0 138 150"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="#f2f2f2ff"></g>
+                    <g id="#000000ff">
+                      <path
+                        fill="#616060"
+                        opacity="1.00"
+                        d=" M 48.78 16.76 C 57.13 13.47 66.25 14.77 75.00 14.49 C 82.33 14.26 89.78 15.97 95.99 19.95 C 105.93 26.08 112.47 37.35 112.73 49.04 C 113.08 57.16 110.24 65.19 105.42 71.66 C 111.64 81.06 114.28 92.82 112.19 103.94 C 110.42 114.06 104.72 123.29 96.85 129.83 C 95.53 130.98 93.80 131.56 92.06 131.49 C 77.38 131.53 62.70 131.47 48.03 131.52 C 45.89 131.48 43.50 131.69 41.73 130.25 C 33.52 123.78 27.65 114.31 25.82 103.99 C 23.70 92.79 26.38 80.90 32.75 71.49 C 27.16 63.96 24.46 54.28 25.95 44.98 C 27.67 32.34 36.81 21.12 48.78 16.76 M 43.25 47.93 C 42.65 51.79 43.85 55.59 45.36 59.09 C 48.95 57.45 52.37 55.40 56.21 54.32 C 68.34 50.42 82.01 52.50 92.69 59.36 C 94.90 55.29 95.89 50.47 94.71 45.93 C 92.99 38.34 85.88 32.36 78.08 32.11 C 72.05 32.01 66.01 32.00 59.98 32.12 C 51.57 32.51 44.14 39.57 43.25 47.93 Z"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div class="slot-text-info" data-saved-workouts>
+                  <span>Saved Workouts</span>
+                </div>
+                <div class="number-boxes">
+                  <button class="app-button reset opacity" data-button-reset>
+                    Delete All
+                  </button>
+                  <button data-history class="app-button history options">
+                    View
+                  </button>
+                  <button data-save class="app-button save go opacity">
+                    Save
+                  </button>
+                </div>
+              </div>
+
+              <div class="row view-saved hide-view">
+                <ul id="list"></ul>
+                <template id="list-item-template">
+                  <li class="list-item">
+                    <label class="list-item-label">
+                      <input
+                        class="check-items"
+                        type="checkbox"
+                        data-list-item-checkbox
+                      />
+                      <span data-list-item-text></span>
+                    </label>
+                    <button data-button-delete class="app-button reset">
+                      Delete
+                    </button>
+                  </li>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

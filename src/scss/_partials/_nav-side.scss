@@ -1,0 +1,82 @@
+.nav-side {
+  width: 40px;
+  height: 100px;
+  margin-top: -50px;
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+  opacity: 0;
+  right: -60px;
+  z-index: 1;
+  transition: 0.8s ease-out;
+  .scroll-down &,
+  .scroll-up & {
+    opacity: 1;
+    right: 20px;
+    @media screen and (min-width: 470px) {
+      right: 30px;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin: 0 0 25px;
+      padding: 0;
+      background-color: $dark-grey;
+      border: 1px solid #000;
+      border-radius: 3px;
+      &:nth-child(1) {
+        border: 1px solid $red12;
+      }
+      &:hover {
+        border: 1px solid $green;
+      }
+      a {
+        padding: 11px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: $off-white;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+          svg {
+            opacity: 1;
+          }
+        }
+        &:active,
+        &:visited {
+          color: $off-white;
+        }
+        &:focus {
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  svg {
+    display: block;
+    &:first-child {
+      width: 24px;
+      height: 24px;
+    }
+    &:nth-child(2) {
+      width: 24px;
+      height: 24px;
+    }
+    &:nth-child(3) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}

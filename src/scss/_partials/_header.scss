@@ -1,0 +1,29 @@
+header {
+  width: 100%;
+  min-height: 225px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0;
+  background-image: url("../images/upper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 0;
+  @media screen and (min-width: 365px) {
+    background-position: 40% 0;
+  }
+}
+
+#logo {
+  width: 85px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-out all;
+  @media screen and (min-width: 320px) {
+    width: 115px;
+  }
+  @media screen and (min-width: 470px) {
+    width: 135px;
+  }
+}

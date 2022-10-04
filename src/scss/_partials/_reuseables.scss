@@ -1,0 +1,78 @@
+.hide-s-mobile {
+  @media screen and (max-width: 355px) {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @media screen and (max-width: 630px) {
+    display: none;
+  }
+}
+
+.title-hide {
+  display: none;
+}
+
+.hide,
+.hide-goals {
+  opacity: 0;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+  display: none;
+  .open & {
+    opacity: 1;
+    display: block;
+  }
+}
+
+.hide-view {
+  opacity: 0;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+  display: none;
+  .close & {
+    opacity: 1;
+    transition: 0.3s ease-out;
+    pointer-events: visible;
+    display: block;
+  }
+}
+
+.display {
+  opacity: 1;
+  transition: 0.3s ease-out;
+  pointer-events: visible;
+  display: block;
+}
+
+.opacity {
+  opacity: 0.3 !important;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1 !important;
+  transition: 0.3s ease-out;
+  pointer-events: visible;
+}
+
+.open-core {
+  display: block;
+  .upper & {
+    display: none;
+  }
+  .lower &,
+  .fullbody &,
+  .fullbodyhiit & {
+    display: block;
+  }
+}
+
+.open-arms {
+  display: none;
+  .upper & {
+    display: block;
+  }
+}
